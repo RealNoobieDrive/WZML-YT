@@ -167,14 +167,8 @@ def add_handlers():
     TgClient.bot.add_handler(
         CallbackQueryHandler(select_type, filters=regex("^list_types"))
     )
-    TgClient.bot.add_handler(CallbackQueryHandler(arg_usage, filters=regex("^help")))    
-    TgClient.bot.add_handler(
-        MessageHandler(
-            jd_mirror,
-            filters=command(BotCommands.JdMirrorCommand, case_sensitive=True)
-            & CustomFilters.authorized,
-        )
-    )
+    TgClient.bot.add_handler(CallbackQueryHandler(arg_usage, filters=regex("^help")))  
+    
     TgClient.bot.add_handler(
         MessageHandler(
             jd_leech,
